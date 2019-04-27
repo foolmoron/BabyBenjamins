@@ -1,7 +1,6 @@
 ﻿using System;
 
 using UnityEngine;
-using UnityEngine.Networking;
 
 public static class GameObjectExtensions {
 
@@ -19,9 +18,5 @@ public static class GameObjectExtensions {
             t = component.GetComponentInChildren<T>();
         }
         return t;
-    }
-
-    public static bool isNetworked(this GameObject go) {
-        return go.GetComponent<NetworkIdentity>() != null;
     }
 }
