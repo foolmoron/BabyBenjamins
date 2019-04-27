@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="coin.svg">
+   sodipodi:docname="circle.svg">
   <defs
      id="defs2">
     <marker
@@ -54,16 +54,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="66.170469"
-     inkscape:cy="812.02885"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="224.9982"
+     inkscape:cy="608.59525"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1102"
-     inkscape:window-height="671"
-     inkscape:window-x="131"
-     inkscape:window-y="71"
+     inkscape:window-width="1465"
+     inkscape:window-height="810"
+     inkscape:window-x="153"
+     inkscape:window-y="66"
      inkscape:window-maximized="0"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0" />
@@ -75,7 +75,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -83,35 +83,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <path
-       style="fill:#ffcc00;fill-opacity:1;stroke:#ffa800;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-opacity:1"
-       d="m 95.249999,64.166667 -71.059523,33.261903 3.023809,51.40476 34.017856,70.30357 82.398809,-12.09523 28.72619,-52.16072 V 92.892855 L 127,65.67857 Z"
-       id="path4518"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
     <circle
-       style="fill:#ffffff;stroke-width:0.22956493"
+       style="fill:#ffffff;stroke-width:0.26458332"
        id="path12"
-       cx="60.854164"
-       cy="118.21727"
-       r="22.300596" />
-    <circle
-       style="fill:#ffffff;stroke-width:0.23345587"
-       id="path12-2"
-       cx="133.04762"
-       cy="104.23215"
-       r="22.678572" />
-    <circle
-       style="fill:#1a1a1a;stroke-width:0.17638889"
-       id="path31"
-       cx="58.208324"
-       cy="123.13095"
-       r="13.607143" />
-    <circle
-       style="fill:#1a1a1a;stroke-width:0.17638889"
-       id="path31-1"
-       cx="136.07143"
-       cy="104.23214"
-       r="13.607143" />
+       cx="106.10601"
+       cy="137.44009"
+       r="60" />
   </g>
 </svg>
