@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 6355407527387790594, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_Name
-      value: Gold
+      value: Gold Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.79
+      value: 4.0419135
       objectReference: {fileID: 0}
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.46
+      value: -2.2203608
       objectReference: {fileID: 0}
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
@@ -70,17 +70,17 @@ PrefabInstance:
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.214189
+      value: 5.705301
       objectReference: {fileID: 0}
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.7605492
+      value: 1.959707
       objectReference: {fileID: 0}
     - target: {fileID: 6844106410065833790, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9184468
+      value: 4.9432616
       objectReference: {fileID: 0}
     - target: {fileID: 1786264391017469892, guid: d59e8aebde8c1cb4092b8075e885f71b,
         type: 3}
@@ -96,21 +96,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Capsule.Radius
       value: 0.375
-      objectReference: {fileID: 0}
-    - target: {fileID: 5383342343623169333, guid: d59e8aebde8c1cb4092b8075e885f71b,
-        type: 3}
-      propertyPath: m_Cylinder.Height
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5383342343623169333, guid: d59e8aebde8c1cb4092b8075e885f71b,
-        type: 3}
-      propertyPath: m_Cylinder.Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5383342343623169333, guid: d59e8aebde8c1cb4092b8075e885f71b,
-        type: 3}
-      propertyPath: m_Cylinder.Axis
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d59e8aebde8c1cb4092b8075e885f71b, type: 3}

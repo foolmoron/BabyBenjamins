@@ -355,7 +355,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemBill100>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1K>(mergingEntity)) {
                 handle = new MergeCert1KJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.02f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -363,7 +363,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert1K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10K>(mergingEntity)) {
                 handle = new MergeCert10KJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.2f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -371,7 +371,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert10K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert100K>(mergingEntity)) {
                 handle = new MergeCert100KJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.4f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -379,7 +379,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert100K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1M>(mergingEntity)) {
                 handle = new MergeCert1MJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.3f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -387,7 +387,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert1M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10M>(mergingEntity)) {
                 handle = new MergeCert10MJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.6f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -395,7 +395,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert10M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert100M>(mergingEntity)) {
                 handle = new MergeCert100MJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.82f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -403,7 +403,7 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert100M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1B>(mergingEntity)) {
                 handle = new MergeCert1BJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.62f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
@@ -411,12 +411,20 @@ public class MergeItemSystem : JobComponentSystem
                 ProcessMergeJob<ItemCert1B>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10B>(mergingEntity)) {
                 handle = new MergeCert10BJob {
-                    MergeDistance = 1.15f,
+                    MergeDistance = 1.98f,
                     MergingEntity = mergingEntity,
                     MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
                     MergeResults = results,
                 }.ScheduleSingle(this, inputDependencies);
                 ProcessMergeJob<ItemCert10B>(handle, results);
+            } else if (EntityManager.HasComponent<ItemCert100B>(mergingEntity)) {
+                handle = new MergeCert100BJob {
+                    MergeDistance = 2.35f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert100B>(handle, results);
             }
             commandBufferSystem.AddJobHandleForProducer(handle);
         }

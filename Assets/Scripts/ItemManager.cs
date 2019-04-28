@@ -85,5 +85,6 @@ public class ItemManager : Manager<ItemManager> {
         map[typeof(ItemCert100M)] = ItemCert1BEntity;
         map[typeof(ItemCert1B)] = ItemCert10BEntity;
         map[typeof(ItemCert10B)] = ItemCert100BEntity;
+        map[typeof(ItemCert100B)] = ItemGoldEntity;
     }
 }

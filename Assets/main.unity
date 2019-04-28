@@ -219,7 +219,7 @@ MonoBehaviour:
   TargetZoomAmount: 0
   ScroolToZoomFactor: 0.035
   ZoomSpeed: 0.11
-  MinSize: 2
+  MinSize: 3
   MaxSize: 14
 --- !u!1 &231508813
 GameObject:
@@ -246,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 231508813}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1596644, y: 2.1596644, z: 2.1596644}
+  m_LocalScale: {x: 5.427663, y: 5.427663, z: 5.427663}
   m_Children:
   - {fileID: 1077489779}
   - {fileID: 247620591}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
-  Speed: {x: 0.018, y: 0}
+  Speed: {x: 0.032, y: 0}
 --- !u!1 &471333159
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,9 +379,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5669957de092dc342be2401fe67d4743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Count: 20
-  PositionMin: {x: -3, y: -2, z: 0}
-  PositionMax: {x: 3, y: 2, z: 0}
+  Count: 600
+  PositionMin: {x: -5, y: -4, z: 0}
+  PositionMax: {x: 5, y: 4, z: 0}
   RotationMin: {x: 0, y: 0, z: 0}
   RotationMax: {x: 0, y: 0, z: 360}
 --- !u!4 &471333161
