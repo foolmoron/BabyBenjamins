@@ -146,12 +146,19 @@ public class ItemManager : Manager<ItemManager> {
             spawnTime = (1 - r) * SpawnIntervalMin + (r) * SpawnIntervalMax;
             spawnTime /= Math.Max(1, Math.Log(value, ValueSpawnSpeedupFactor));
             var valueToSpawn = Math.Max(1, Math.Pow(value, ValueSpawnFactor) * Mathf.Lerp(0.7f, 1.15f, Random.value));
-            for (int i = 0; i < valueMap.Length; i++) {
-                if (valueMap[i].value > valueToSpawn) {
-                    var e = World.Active.EntityManager.Instantiate(valueMap[i - 1].entity);
-                    World.Active.EntityManager.SetComponentData(e, new Translation { Value = new Vector3(Mathf.Lerp(SpawnPositionMin.x, SpawnPositionMax.x, Random.value), Mathf.Lerp(SpawnPositionMin.y, SpawnPositionMax.y, Random.value), Mathf.Lerp(SpawnPositionMin.z, SpawnPositionMax.z, Random.value)) });
-                    break;
-                }
+            SpawnValue(valueToSpawn);
+        }
+        if (Input.GetKeyDown(KeyCode.Z)) {
+            SpawnValue(value);
+        }
+    }
+
+    void SpawnValue(double valueToSpawn) {
+        for (int i = 0; i < valueMap.Length; i++) {
+            if (valueMap[i].value > valueToSpawn) {
+                var e = World.Active.EntityManager.Instantiate(valueMap[i - 1].entity);
+                World.Active.EntityManager.SetComponentData(e, new Translation { Value = new Vector3(Mathf.Lerp(SpawnPositionMin.x, SpawnPositionMax.x, Random.value), Mathf.Lerp(SpawnPositionMin.y, SpawnPositionMax.y, Random.value), Mathf.Lerp(SpawnPositionMin.z, SpawnPositionMax.z, Random.value)) });
+                break;
             }
         }
     }
