@@ -118,6 +118,160 @@ public class MergeItemSystem : JobComponentSystem
             }
         }
     }
+    [BurstCompile]
+    struct MergeBill20Job : IJobForEachWithEntity<ItemBill20, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemBill20 item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeBill100Job : IJobForEachWithEntity<ItemBill100, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemBill100 item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert1KJob : IJobForEachWithEntity<ItemCert1K, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert1K item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert10KJob : IJobForEachWithEntity<ItemCert10K, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert10K item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert100KJob : IJobForEachWithEntity<ItemCert100K, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert100K item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert1MJob : IJobForEachWithEntity<ItemCert1M, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert1M item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert10MJob : IJobForEachWithEntity<ItemCert10M, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert10M item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert100MJob : IJobForEachWithEntity<ItemCert100M, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert100M item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert1BJob : IJobForEachWithEntity<ItemCert1B, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert1B item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert10BJob : IJobForEachWithEntity<ItemCert10B, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert10B item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
+    [BurstCompile]
+    struct MergeCert100BJob : IJobForEachWithEntity<ItemCert100B, Translation> {
+
+        [ReadOnly] public float MergeDistance;
+        [ReadOnly] public Entity MergingEntity;
+        [ReadOnly] public float3 MergingPos;
+        public NativeArray<Entity> MergeResults;
+
+        public void Execute(Entity entity, int index, [ReadOnly]ref ItemCert100B item, [ReadOnly]ref Translation itemPos) {
+            if (entity != MergingEntity && math.length(itemPos.Value - MergingPos) <= MergeDistance) {
+                MergeResults[0] = entity;
+            }
+        }
+    }
 
     BeginInitializationEntityCommandBufferSystem commandBufferSystem;
     Entity mergingEntity;
@@ -184,27 +338,85 @@ public class MergeItemSystem : JobComponentSystem
                 }.ScheduleSingle(this, inputDependencies);
                 ProcessMergeJob<ItemBill1>(handle, results);
             } else if (EntityManager.HasComponent<ItemBill20>(mergingEntity)) {
-
+                handle = new MergeBill20Job {
+                    MergeDistance = 0.93f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemBill20>(handle, results);
             } else if (EntityManager.HasComponent<ItemBill100>(mergingEntity)) {
-
+                handle = new MergeBill100Job {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemBill100>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1K>(mergingEntity)) {
-
+                handle = new MergeCert1KJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert1K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10K>(mergingEntity)) {
-
+                handle = new MergeCert10KJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert10K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert100K>(mergingEntity)) {
-
+                handle = new MergeCert100KJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert100K>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1M>(mergingEntity)) {
-
+                handle = new MergeCert1MJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert1M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10M>(mergingEntity)) {
-
+                handle = new MergeCert10MJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert10M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert100M>(mergingEntity)) {
-
+                handle = new MergeCert100MJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert100M>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert1B>(mergingEntity)) {
-
+                handle = new MergeCert1BJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert1B>(handle, results);
             } else if (EntityManager.HasComponent<ItemCert10B>(mergingEntity)) {
-
-            } else if (EntityManager.HasComponent<ItemCert100B>(mergingEntity)) {
-
+                handle = new MergeCert10BJob {
+                    MergeDistance = 1.15f,
+                    MergingEntity = mergingEntity,
+                    MergingPos = EntityManager.GetComponentData<Translation>(mergingEntity).Value,
+                    MergeResults = results,
+                }.ScheduleSingle(this, inputDependencies);
+                ProcessMergeJob<ItemCert10B>(handle, results);
             }
             commandBufferSystem.AddJobHandleForProducer(handle);
         }
