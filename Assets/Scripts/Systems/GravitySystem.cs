@@ -1,4 +1,5 @@
-﻿using Unity.Burst;
+﻿using System;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
 using Unity.Jobs;
@@ -8,9 +9,21 @@ using Unity.Transforms;
 using static Unity.Mathematics.math;
 using quaternion = Unity.Mathematics.quaternion;
 
+[Serializable]
+public struct GravitySource : IComponentData {
+    public float Acceleration;
+    public float MinRadius;
+    public float MaxRadius;
+}
+
+[Serializable]
+public struct GravityTarget : IComponentData {
+
+}
+
 public class GravitySystem : JobComponentSystem
 {
-    //[BurstCompile]
+    [BurstCompile]
     struct GravitySystemJob : IJobForEach<GravityTarget, Translation, PhysicsVelocity> {
 
         public float dt;
@@ -21,20 +34,14 @@ public class GravitySystem : JobComponentSystem
             var vectorToTarget = targetPos.Value - SourcePos.Value;
             var distToTarget = length(vectorToTarget);
             var dirToTarget = normalize(vectorToTarget);
-            var force = -dirToTarget * Source.Acceleration;
-            var distFactor = sign(max(0, distToTarget - Source.MinRadius)) + max(0, distToTarget - Source.MaxRadius);
+            var force = -dirToTarget * Source.Acceleration * 1 / distToTarget;
+            var distFactor = sign(max(0, distToTarget - Source.MinRadius)) + max(0, distToTarget - Source.MaxRadius) * max(0, distToTarget - Source.MaxRadius);
             targetVel.Linear += force * dt * distFactor;
         }
     }
-
-    EntityQuery query;
-
-    protected override void OnCreate() {
-        query = GetEntityQuery(ComponentType.ReadOnly<GravitySource>(), ComponentType.ReadOnly<Translation>());
-    }
     
     protected override JobHandle OnUpdate(JobHandle inputDependencies) {
-        var gravitySources = query.ToEntityArray(Allocator.TempJob, out var queryJob);
+        var gravitySources = GetEntityQuery(ComponentType.ReadOnly<GravitySource>(), ComponentType.ReadOnly<Translation>()).ToEntityArray(Allocator.TempJob, out var queryJob);
         queryJob.Complete();
 
         var gravityJobs = new NativeArray<JobHandle>(gravitySources.Length, Allocator.Temp);
