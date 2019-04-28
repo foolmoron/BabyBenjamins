@@ -12,10 +12,10 @@ public class ScrollUV : MonoBehaviour {
     }
 
     void Update() {
-        Offset.x = (Offset.x + Speed.x) % 1;
-        Offset.y = (Offset.y + Speed.y) % 1;
-        renderer.sharedMaterial.SetFloat("_OffsetX", Offset.x);
-        renderer.sharedMaterial.SetFloat("_OffsetY", Offset.y); // TODO: copy sprite shader and add offsets
+        Offset.x = (Offset.x + Speed.x * Time.deltaTime) % 1;
+        Offset.y = (Offset.y + Speed.y * Time.deltaTime) % 1;
+        renderer.material.SetFloat("_OffsetX", Offset.x);
+        renderer.material.SetFloat("_OffsetY", Offset.y); // TODO: copy sprite shader and add offsets
     }
 
 }

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EarthSprite
-  m_Shader: {fileID: 4800000, guid: 5fa8808aaae238f469ec629516769b9d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3dcb54d5ce3547c4e9a6a2152bd27bbe, type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -73,6 +73,10 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _OffsetX: 0
+    - _OffsetY: 0
+    - _PaddingX: 0.135
+    - _PaddingY: 0.05
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
