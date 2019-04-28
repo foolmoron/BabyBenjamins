@@ -1,5 +1,8 @@
-﻿using Unity.Entities;
+﻿using System;
+using Unity.Entities;
+using Unity.Transforms;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ItemManager : Manager<ItemManager> {
 
@@ -36,6 +39,17 @@ public class ItemManager : Manager<ItemManager> {
     public Entity ItemCert10BEntity;
     public Entity ItemCert100BEntity;
     public Entity ItemGoldEntity;
+
+    double value;
+    public double ValueSpawnFactor = 0.35;
+    public double SpawnIntervalMin = 3;
+    public double SpawnIntervalMax = 10;
+    public double ValueSpawnSpeedupFactor = 200;
+    double spawnTime;
+    public Vector3 SpawnPositionMin;
+    public Vector3 SpawnPositionMax;
+
+    (double value, Entity entity)[] valueMap;
 
     public void Awake() {
         var map = MergeItemSystem.NextItemMap;
@@ -102,5 +116,43 @@ public class ItemManager : Manager<ItemManager> {
         map[typeof(ItemCert1B)] = ItemCert10BEntity;
         map[typeof(ItemCert10B)] = ItemCert100BEntity;
         map[typeof(ItemCert100B)] = ItemGoldEntity;
+
+        CountValueSystem.OnNewCount += v => value = v;
+
+        valueMap = new (double value, Entity entity)[] {
+            (1, ItemCoin1Entity),
+            (5, ItemCoin5Entity),
+            (25, ItemCoin25Entity),
+            (100, ItemBill1Entity),
+            (2000, ItemBill20Entity),
+            (10000, ItemBill100Entity),
+            (100000, ItemCert1KEntity),
+            (1000000, ItemCert10KEntity),
+            (10000000, ItemCert100KEntity),
+            (100000000, ItemCert1MEntity),
+            (1000000000, ItemCert10MEntity),
+            (10000000000, ItemCert100MEntity),
+            (100000000000, ItemCert1BEntity),
+            (1000000000000, ItemCert10BEntity),
+            (10000000000000, ItemCert100BEntity),
+            (100000000000000, ItemGoldEntity)
+        };
+    }
+
+    void Update() {
+        spawnTime -= Time.deltaTime;
+        if (spawnTime < 0) {
+            var r = Random.value;
+            spawnTime = (1 - r) * SpawnIntervalMin + (r) * SpawnIntervalMax;
+            spawnTime /= Math.Max(1, Math.Log(value, ValueSpawnSpeedupFactor));
+            var valueToSpawn = Math.Max(1, Math.Pow(value, ValueSpawnFactor) * Mathf.Lerp(0.7f, 1.15f, Random.value));
+            for (int i = 0; i < valueMap.Length; i++) {
+                if (valueMap[i].value > valueToSpawn) {
+                    var e = World.Active.EntityManager.Instantiate(valueMap[i - 1].entity);
+                    World.Active.EntityManager.SetComponentData(e, new Translation { Value = new Vector3(Mathf.Lerp(SpawnPositionMin.x, SpawnPositionMax.x, Random.value), Mathf.Lerp(SpawnPositionMin.y, SpawnPositionMax.y, Random.value), Mathf.Lerp(SpawnPositionMin.z, SpawnPositionMax.z, Random.value)) });
+                    break;
+                }
+            }
+        }
     }
 }

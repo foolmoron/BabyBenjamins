@@ -371,54 +371,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 0}
   Speed: {x: 0.032, y: 0}
---- !u!1 &471333159
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 471333161}
-  - component: {fileID: 471333160}
-  m_Layer: 0
-  m_Name: Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &471333160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471333159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5669957de092dc342be2401fe67d4743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Count: 40
-  PositionMin: {x: -5, y: -4, z: 0}
-  PositionMax: {x: 5, y: 4, z: 0}
-  RotationMin: {x: 0, y: 0, z: 0}
-  RotationMax: {x: 0, y: 0, z: 360}
---- !u!4 &471333161
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471333159}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826418130
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +432,12 @@ MonoBehaviour:
     type: 3}
   ItemGoldPrefab: {fileID: 1670709561515869799, guid: ff1880140d95dc74faabc08f5b78d447,
     type: 3}
+  ValueSpawnFactor: 0.35
+  SpawnIntervalMin: 1.5
+  SpawnIntervalMax: 4.5
+  ValueSpawnSpeedupFactor: 200
+  SpawnPositionMin: {x: -2, y: -2, z: 0}
+  SpawnPositionMax: {x: 2, y: 2, z: 0}
 --- !u!4 &826418132
 Transform:
   m_ObjectHideFlags: 0
@@ -586,7 +544,7 @@ RectTransform:
   m_Children:
   - {fileID: 2085437099}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5586,7 +5544,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085437098
 GameObject:
