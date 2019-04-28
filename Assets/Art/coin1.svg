@@ -15,7 +15,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="coin.svg">
+   sodipodi:docname="coin1.svg">
   <defs
      id="defs2">
     <marker
@@ -55,15 +55,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="66.170469"
-     inkscape:cy="812.02885"
+     inkscape:cx="129.02761"
+     inkscape:cy="577.74314"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1102"
-     inkscape:window-height="671"
-     inkscape:window-x="131"
-     inkscape:window-y="71"
+     inkscape:window-height="881"
+     inkscape:window-x="232"
+     inkscape:window-y="48"
      inkscape:window-maximized="0"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0" />
@@ -84,11 +84,21 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#ffcc00;fill-opacity:1;stroke:#ffa800;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffcc00;fill-opacity:1;stroke:#ff8b00;stroke-width:5.30000019;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:3.79999995;stroke-dasharray:none;stroke-opacity:1"
        d="m 95.249999,64.166667 -71.059523,33.261903 3.023809,51.40476 34.017856,70.30357 82.398809,-12.09523 28.72619,-52.16072 V 92.892855 L 127,65.67857 Z"
        id="path4518"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
+    <g
+       aria-label="1"
+       transform="rotate(-22.386126)"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:119.97159576px;line-height:1.25;font-family:'Linux Libertine G';-inkscape-font-specification:'Linux Libertine G Bold';letter-spacing:0px;word-spacing:0px;opacity:0.98999999;fill:#ff8b00;fill-opacity:1;stroke:none;stroke-width:0.17995737"
+       id="text4541">
+      <path
+         id="path859"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:119.97159576px;font-family:'Linux Libertine G';-inkscape-font-specification:'Linux Libertine G Bold';fill:#ff8b00;fill-opacity:1;stroke-width:0.17995737"
+         d="m 49.463196,209.18164 q 0,2.87042 0.702959,4.92071 0.702959,1.99172 1.640237,3.10474 0.995858,1.05444 2.870414,1.69881 1.874556,0.5858 3.221893,0.76154 1.405917,0.17574 3.924852,0.2929 0.878699,0.52722 0.878699,2.0503 0,1.52307 -0.878699,2.05029 -19.68284,-0.23432 -20.034319,-0.23432 l -20.327219,0.23432 q -0.878698,-0.52722 -0.878698,-2.05029 0,-1.52308 0.878698,-2.0503 2.518935,-0.11716 3.866273,-0.2929 1.405917,-0.17574 3.280473,-0.76154 1.874556,-0.64437 2.811834,-1.69881 0.995858,-1.11302 1.698817,-3.10474 0.702958,-2.05029 0.702958,-4.92071 v -37.5497 q 0,-4.21775 -0.527219,-5.33077 -0.468639,-1.11302 -1.757396,-1.11302 -5.447929,0 -12.477515,2.98758 -2.460355,-1.69882 -2.636094,-5.15503 l 12.770414,-5.15503 q 9.021301,-3.57337 13.180473,-5.44793 3.573373,-1.7574 5.975148,-1.7574 2.050296,0 2.050296,2.0503 -0.937279,6.79527 -0.937279,13.18047 z" />
+    </g>
     <circle
        style="fill:#ffffff;stroke-width:0.22956493"
        id="path12"
