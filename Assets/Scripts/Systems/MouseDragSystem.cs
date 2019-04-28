@@ -13,7 +13,7 @@ public struct CanMouseDrag : IComponentData {
 
 public class MouseDragSystem : JobComponentSystem
 {
-    //[BurstCompile]
+    [BurstCompile]
     struct MouseRaycastJob : IJob {
         
         [ReadOnly] public CollisionWorld CollisionWorld;
@@ -54,7 +54,7 @@ public class MouseDragSystem : JobComponentSystem
                 Results = results,
             };
             job.Schedule(JobHandle.CombineDependencies(buildPhysicsSystem.FinalJobHandle, inputDependencies)).Complete();
-            if (results[0].Fraction > 0) {
+            if (results[0].Fraction > 0 && results[0].RigidBodyIndex < buildPhysicsSystem.PhysicsWorld.CollisionWorld.Bodies.Length) {
                 draggedEntity = buildPhysicsSystem.PhysicsWorld.CollisionWorld.Bodies[results[0].RigidBodyIndex].Entity;
                 EntityManager.AddComponentData(draggedEntity, new ForceToPosition { SpeedModifier = 10 });
                 dragging = true;
