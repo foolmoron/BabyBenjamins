@@ -12,10 +12,10 @@ public class SetToZeroSystem : JobComponentSystem
 {
     [BurstCompile]
     [RequireComponentTag(typeof(GravityTarget))]
-    struct SetZToZeroJob : IJobForEach<Translation> {
+    struct SetZToZeroJob : IJobForEachWithEntity<Translation> {
 
-        public void Execute(ref Translation targetPos) {
-            targetPos.Value.z = 0;
+        public void Execute(Entity entity, int index, ref Translation targetPos) {
+            targetPos.Value.z = index * 0.0001f;
         }
     }
     

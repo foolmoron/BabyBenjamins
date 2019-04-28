@@ -54,11 +54,10 @@ public class MouseDragSystem : JobComponentSystem
                 Results = results,
             };
             job.Schedule(JobHandle.CombineDependencies(buildPhysicsSystem.FinalJobHandle, inputDependencies)).Complete();
-            if (results[0].Fraction > 0 && results[0].RigidBodyIndex < buildPhysicsSystem.PhysicsWorld.CollisionWorld.Bodies.Length) {
+            if (results[0].Fraction > 0 && results[0].RigidBodyIndex >= 0 && results[0].RigidBodyIndex < buildPhysicsSystem.PhysicsWorld.CollisionWorld.Bodies.Length) {
                 draggedEntity = buildPhysicsSystem.PhysicsWorld.CollisionWorld.Bodies[results[0].RigidBodyIndex].Entity;
                 EntityManager.AddComponentData(draggedEntity, new ForceToPosition { SpeedModifier = 10 });
                 dragging = true;
-                UnityEngine.Debug.Log(results[0].RigidBodyIndex + " - " + results[0].Position);
             }
             results.Dispose();
         } else if (UnityEngine.Input.GetMouseButton(0)) {
