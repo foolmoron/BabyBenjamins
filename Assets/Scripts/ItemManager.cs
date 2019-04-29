@@ -45,7 +45,7 @@ public class ItemManager : Manager<ItemManager> {
     public double SpawnIntervalMin = 3;
     public double SpawnIntervalMax = 10;
     public double ValueSpawnSpeedupFactor = 200;
-    double spawnTime;
+    double spawnTime = 1.5;
     public Vector3 SpawnPositionMin;
     public Vector3 SpawnPositionMax;
 
@@ -156,9 +156,13 @@ public class ItemManager : Manager<ItemManager> {
     void SpawnValue(double valueToSpawn) {
         for (int i = 0; i < valueMap.Length; i++) {
             if (valueMap[i].value > valueToSpawn) {
-                var e = World.Active.EntityManager.Instantiate(valueMap[i - 1].entity);
+              var e = World.Active.EntityManager.Instantiate(valueMap[i - 1].entity);
+              if (World.Active.EntityManager.HasComponent<Translation>(e)) {
                 World.Active.EntityManager.SetComponentData(e, new Translation { Value = new Vector3(Mathf.Lerp(SpawnPositionMin.x, SpawnPositionMax.x, Random.value), Mathf.Lerp(SpawnPositionMin.y, SpawnPositionMax.y, Random.value), Mathf.Lerp(SpawnPositionMin.z, SpawnPositionMax.z, Random.value)) });
-                break;
+              } else {
+                World.Active.EntityManager.AddComponentData(e, new Translation { Value = new Vector3(Mathf.Lerp(SpawnPositionMin.x, SpawnPositionMax.x, Random.value), Mathf.Lerp(SpawnPositionMin.y, SpawnPositionMax.y, Random.value), Mathf.Lerp(SpawnPositionMin.z, SpawnPositionMax.z, Random.value)) });
+              }
+              break;
             }
         }
     }
