@@ -51,7 +51,7 @@ public class ItemManager : Manager<ItemManager> {
 
     (double value, Entity entity)[] valueMap;
 
-    public void Awake() {
+    public void Start() {
         var map = MergeItemSystem.NextItemMap;
         ItemCoin1Entity = GameObjectConversionUtility.ConvertGameObjectHierarchy(ItemCoin1Prefab, World.Active);
         ItemCoin5Entity = GameObjectConversionUtility.ConvertGameObjectHierarchy(ItemCoin5Prefab, World.Active);
